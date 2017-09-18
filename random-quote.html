@@ -5,12 +5,41 @@
 -->
 <html>
 	<head>
-		<title>Random Quote Generator</title>
-
 		<meta charset="utf-8" />
+		<title>Random Quote Generator</title>
+		<!-- Shortcut icon-->
 		<link rel="shortcut icon" href="images/quote.ico">
+
+		<!-- CSS files -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+		<link rel="stylesheet" type="text/css" href="assets/css/random_quote.css">
 	</head>
 	<body>
-		<h2> inital page </h2>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<h1> Enes's Random Quote Machine</h1>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2">
+					<p id="#quote"> you can </p>
+					<p id="#author"> -- unknown </p>
+					<ul class="list-inline">
+						<li><a href="#" class="btn btn-default btn-lg get-quote"><i class="fa fa-quote-left fa-fw"></i>Get Quote</a></li>
+						<li><a href="#" class="btn btn-default btn-lg share-quote"><i class="fa fa-twitter fa-fw"></i> Share</a> </li>
+					</ul>
+				</div>
+				
+			</div>
+
+
+		</div>
+
+		<script src="assets/js/random_quote.js"></script>
 	</body>
 </html>
