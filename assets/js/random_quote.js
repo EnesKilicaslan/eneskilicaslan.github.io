@@ -37,9 +37,8 @@ $(document).ready(function(){
 					if(author)
 						$('#author').text('~' + author);
 					else
-						$('#author').text('~ unknown');
-				}
-				
+						$('#author').text('~ Unknown');
+				}	
 			},
 
 			error: function(){ //on fail call API again
@@ -59,5 +58,27 @@ $(document).ready(function(){
         e.preventDefault();
         getNewQuote();
     });
+
+    $('.share-quote').click(function(e){
+    	e.preventDefault();
+
+    })
+
+    $('.popup').click(function(event) {
+    var width  = 575,
+        height = 400,
+        left   = ($(window).width()  - width)  / 2,
+        top    = ($(window).height() - height) / 2,
+        url    = this.href,
+        opts   = 'status=1' +
+                 ',width='  + width  +
+                 ',height=' + height +
+                 ',top='    + top    +
+                 ',left='   + left;
+    
+    window.open(url + quote + '\n' + '~ ' + author, 'twitter', opts);
+ 
+    return false;
+  });
 
 });

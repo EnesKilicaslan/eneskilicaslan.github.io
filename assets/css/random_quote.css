@@ -29,6 +29,14 @@ hr {
 	border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
 
+.quote-container {
+	background: rgba(190, 235, 225, 0.07);
+	padding: 10px; 
+	margin-bottom: 25px;
+	border-radius: 4%;
+
+}
+
 .percent-hundered{
 	height: 100vh;
 }
