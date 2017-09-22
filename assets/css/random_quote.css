@@ -47,18 +47,18 @@ hr {
 
 
 .percent-thirty {
-	height: 30%;
+	height: 35%;
 }
 
-.text-head {
-
-}
-
-.btn-outline {
+.btn-outline , .btn-outline:visited,  .btn-outline:focus{
 	color: #652e12;
 }
 
-.btn-outline:hover, .btn-outline:focus, .btn-outline:active, .btn-outline.active, .open>.dropdown-toggle.btn-outline {
-
+/*
+.btn-outline:hover, .btn-outline:focus, .open>.dropdown-toggle.btn-outline {
 	color: #998673;
-}
+}*/
+
+.btn-outline:not([disabled]):hover {
+    color: #998673;
+  }
