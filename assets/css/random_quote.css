@@ -32,7 +32,7 @@ hr {
 .quote-container {
 	background: rgba(190, 235, 225, 0.07);
 	padding: 10px; 
-	margin-bottom: 25px;
+	margin-bottom: 15px;
 	border-radius: 4%;
 
 }
@@ -47,7 +47,7 @@ hr {
 
 
 .percent-thirty {
-	height: 40%;
+	height: 45%;
 }
 
 .btn-outline , .btn-outline:visited,  .btn-outline:focus{
