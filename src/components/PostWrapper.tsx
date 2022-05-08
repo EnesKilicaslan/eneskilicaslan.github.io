@@ -25,6 +25,7 @@ export const PostWrapper = (props: {
               width={64}
               height={64}
               className="rounded-full object-cover"
+              unoptimized={true}
             />
           </div>
 
