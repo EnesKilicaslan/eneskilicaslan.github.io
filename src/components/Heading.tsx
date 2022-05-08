@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import profilePhoto from "@assets/images/profile.jpg";
+import { imageLoader } from "helpers/image_loader";
 
 export const Heading = (props: {
   active: "/" | "/portfolio" | "/blog" | "/contact";
@@ -14,6 +15,7 @@ export const Heading = (props: {
     <div className="flex justify-center items-center gap-4 sm:gap-12 pt-2 sm:pt-10 md:pt-24 flex-col md:flex-row font-bold text-3xl">
       <div>
         <Image
+          loader={imageLoader}
           width={180}
           height={180}
           src={profilePhoto}
