@@ -50,8 +50,6 @@ export const Blog = (props: { infos: PostInfo[] }) => {
 export async function getStaticProps() {
   const infos = getPostInfos();
 
-  console.log("infos: ", infos);
-
   return {
     props: {
       infos, // will be passed to the page component as props

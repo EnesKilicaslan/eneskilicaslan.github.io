@@ -82,7 +82,6 @@ export async function getStaticProps({ params }: PostProp) {
 export async function getStaticPaths() {
   const paths = getSlugs().map((slug) => ({ params: { slug } }));
 
-  console.log(paths);
   return {
     paths,
     fallback: false, // false or 'blocking'

@@ -9,7 +9,6 @@ const POSTS_PATH = path.join(cwd(), "posts");
 const POST_EXTENSION = ".mdx";
 
 export function getSlugs(): string[] {
-  // console.log(`Current directory: ${cwd()}`);
   const fileNames = sync("*.mdx", {
     cwd: POSTS_PATH,
   });
@@ -55,7 +54,6 @@ export function getPosts(): Post[] {
       };
     })
     .sort((p1, p2) => {
-      console.log("date1: ", new Date(p1.info.date));
       return new Date(p1.info.date) > new Date(p2.info.date) ? 1 : -1;
     });
 
@@ -79,8 +77,6 @@ export function getPostInfos(): PostInfo[] {
     })
     .sort((p1, p2) => {
       // sort the posts DESC, newest on top
-      console.log("p1: ", p1);
-      console.log("p2: ", p2);
       return p1.date < p2.date ? 1 : -1;
     })
     .map((p) => ({
