@@ -6,6 +6,7 @@ import React from "react";
 import BackIcon from "@assets/images/back-icon.svg";
 import profilePhoto from "@assets/images/profile.jpg";
 import { Github, Stackoverflow, Medium } from "@assets/icons";
+import { imageLoader } from "helpers/image_loader";
 
 export const PostWrapper = (props: {
   children: React.ReactChild;
@@ -20,6 +21,7 @@ export const PostWrapper = (props: {
           <div className="w-16 h-16">
             <Image
               src={profilePhoto}
+              loader={imageLoader}
               width={64}
               height={64}
               className="rounded-full object-cover"
