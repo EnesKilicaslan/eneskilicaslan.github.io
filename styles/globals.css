@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Jim Nightshade";
+  src: local("Jim Nightshade"),
+    url(../assets/fonts/JimNightshade-Regular.ttf) format("truetype");
+  font-display: cursive;
+}
+
+.img-container + .img-container {
+  margin-top: 2rem;
+}

@@ -1,0 +1,65 @@
+---
+title: Higher Order Components in React — (HOC)
+tags:
+  - react
+  - hoc
+  - code-reuse
+  - javascript
+date: 2021-12-18
+excerpt: Higher Order Components is a Javascript and React Pattern for code re-use
+---
+
+This might be relatively long, but keep up reading. I am sure you will find it useful.
+
+Higher ordering is not special to ReactJS however React made the pattern famous. The idea comes from JavaScript's core feature closure.
+
+**closure** is the ability to access the outer function's lexical scope, mainly the variables, from the inner function even after the outer function has completed its execution.
+
+This concept becomes really powerful when it is combined with functions that return functions.
+In JavaScript, there two types of functions in terms of their order:
+
+- **first order functions:** Functions that take primitive or non-function types as parameters and return primitive or non-function type.
+- **higher order functions:** Function that either take a function as a parameter or return a function.
+
+Higher order functions and closure together creates magic in the event-based system we everyday use in the web. These concepts allow us to create reusable functions.
+MDN guys explain it here in a very understandable way, take look if you haven't already.
+
+React inspired from JavaScript's Higher Order Functions, adopted it into their building blocks and created Higher Order Components (HOC).
+HOC is a function that takes a React component as a parameter and returns a React component after adding some common logic. The goal here is the same, code reuse.
+
+When we find a common logic in React components, we can put that logic into a function. That function takes those components as a parameter and returns the enhanced version of the corresponding component after adding that logic.
+MDN`s example is explanatory yet simple however applies only on Javascript.
+
+<Image src="/images/hoc1.png" />
+
+The above code snipped works correctly. However there is a huge code duplication.
+Instead of repeating the logic every time (in this case changing the font-size) like
+above, they created a function that returns another functions which handles the logic.
+We could get rid of code duplication with this way as shown below.
+
+<Image src="/images/hoc2.png" width={700} height={600} />
+
+Let's assume that we have a project and in that project we have custom Input and Textarea components wrapping html input and html textarea tags respectively.
+Making first letter of each word in their value capitalized is their feature. We can implement them as shown blow.
+
+<Image src="/images/hoc3.png" width={700} height={600} />
+
+<Image src="/images/hoc4.png" width={700} height={600} />
+
+As you realized, there is a code duplication for the keep tracking the value in the state and capitalizing work. Even, the code seems very similar from the constructor to render methods. We can get rid of this duplication by moving the logic to a higher order function as shown below.
+
+<Image src="/images/hoc5.png" width={700} height={600} />
+
+We created a function named withCounter, this is the HOC convention; we add with prefix to the function name. This function takes a component — in this case it will be either Input or Textarea components and returns its enhanced version after adding capitalizing logic.
+Then we can simplify our Input component as show below.
+It does not need to keep a state and have a capitalizing logic anymore, instead it takes those information from the props. The last line is important,
+we don't just export the Input component, but we export its enhanced version by wrapping it the **withCounter** HOC function.
+
+<Image src="/images/hoc6.png" width={700} height={600} />
+
+I didn't put Textarea component here to make the post a bit shorter, you can take a look to the sandbox
+
+That's all for this post. You can find the sandbox here if you want play around a bit.
+
+Hope you learned a lot and found this post useful.
+If you did, please don't forget to leave claps and share. Thanks in advance, see you in the next posts.

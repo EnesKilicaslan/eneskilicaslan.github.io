@@ -1,0 +1,47 @@
+---
+title: Conditional Rendering in Navlink of React Router
+tags:
+  - react
+  - react-router-dom
+  - navlink
+  - link
+date: 2022-01-25
+excerpt: React Router v6 has been released and here there is a trick for styling
+---
+
+React Router (react-router-dom for npm) is a fully-featured client and server-side routing library for React.
+They released version 6 recently. It has some breaking changes at the time this post is written.
+And it's not backward compatible yet, so you might want to wait till the backward compatible version is released if you're thinking to upgrade version 5.
+
+In this post, I will talk about a small trick that will solve conditional rendering problem of the NavLink component.
+
+As you might know, NavLink is special version of Link component.
+It is used in the navigation section of the apps. It has some additional attributes according to matched URL and we will take advantage
+from one of those attributes.
+
+I might want to render different components inside of the NavLink component according to its active state.
+For example, **instagram** is using filled icon if the current route matches with the component and using non-filled icon otherwise, as shown below
+
+<Image src="/images/react-router1.png" />
+
+As I said, Navlink is a special component.
+It's style attribute is a function that takes **_isActive_** argument which will be set to true when the route match with the corresponding component.
+And we can benefit from that feature. We will keep a state object that represents active component and set it in the style function of each NavLink.
+
+<Image src="/images/react-router2.png" />
+
+For simplicity, I did not create extra components instead just wrote their names in string like “HomeFilled”, “Home”, “ProfileFilled”… Of course, you can put your real components here.
+
+We created a function named activate, it takes the boolean value isActive together with the path. When the path is changed, then activate function is called automatically. So, our state will always have the updated path.
+
+I can hear your saying
+
+> hmm fine, what if I want to use style property of NavLink???
+
+Well, we still can use style property separately for active and inactive states by setting the return value of **_activate_** function.
+
+Thank you for reading so far, here the sandbox like in case you want to try yourself.
+
+Please don't forget to leave claps and share with your friends if you found it useful.
+
+See you in the next post. Cheers..

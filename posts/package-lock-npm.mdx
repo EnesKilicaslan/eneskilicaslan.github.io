@@ -1,0 +1,88 @@
+---
+title: What is package-lock file and Semantic Versioning
+tags:
+  - npm
+  - versioning
+  - javascript
+date: 2020-05-09
+excerpt: Higher Order Components is a Javascript and React Pattern for code re-use
+---
+
+NPM (Node Package Manager) uses semantic versioning.
+
+Semantic versioning is a good way for communicating with the users of the package.It explains what can happen to the user of the package when it updates the latest version. This information is useful because sometimes the changes in the new release can break existing code. In order to prevent from such breakings, NPM package developers should respect to the hidden standard named semantic versioning and it works like explained below
+
+An example package version can be **3.2.1**
+
+_From left to right,_
+
+- **first number:** represents major version, 3 in the example
+- **second number:** represents minor version, 2 in the example
+- **third number:** represents patch version, 1 in the example
+
+These versions should be set by the maintainers of the package according to semantic versioning.
+If there are only bug fixes in the new version, then just the patch version would be increased.
+On the other hand, if backward compatible new feature developments are available, then minor version would be increased.
+However, if the changes are not backward compatible, i.e breaking existing package changes are exist, in the new code, then major version should be increased.
+
+When we execute npm install command in a directory where just a package.json file
+resist, then npm installs most updated minor and patch versions of the packages specified
+in the dependencies section of the package.json file.
+
+package.json file does not contain the whole dependency tree and because of that, when we call npm install command
+we might get different versions of dependency packages.
+
+Whenever you want to install each dependency from scratch ( does not matter if you share your code with a teammate
+or removed node_modules folder in your environment) you expect to have the same versions
+of dependency packages. Because you want such a consistent behavior, an extra information
+is needed and here package-lock.json file comes into the play.
+
+package-lock.json is automatically generated when node_modules folder or package.json file modified
+by npm. It contains information about the whole dependency tree to create the identical
+tree later from scratch.
+
+It is available with npm version ≥ 5.
+
+Before npm version 5, npm-shrinkwrap.json file has been introduced with version 2.
+However, it was not default part of npm and people are not aware of its existence
+except from those who npm library publishers. npm did not turn it directly into a
+lock file because of backward compatibility issues. Making available it by default
+could be risky, people might have been publishing it accidentally. That would prevent
+npm updating dependencies and which eventually causes data duplication. So, they
+chose a new name, package-lock.json.
+
+package-lock.json file is never published to npm registry whereas npm-shrinkwrap.json file is by default.
+
+If npm-shrinkwrap.json exist, then package-lock.json is ignored. If the project is not a library (that will
+be published), then no need to have npm-shrinkwrap.json file.
+
+package-lock.json has precedence over package.json and that is indented behavior. However, if there is
+a mismatch between these two files, then package-lock.json file is overwritten.
+
+For example,
+
+if package.json and package-lock.json is like following
+
+<Image src="/images/package1.png" />
+
+All subsequent install will download the exact same version as in the lock file even though
+the dependency is specified as ~ which means download minor and patch updates.
+
+However, if we change package.json manually, there would be a mismatch. For example, I changed
+typescript dependency from “~2.1.6” to “~2.2.0”. Then when I call npm install command, package-lock.json
+file is updated to the most recent minor and patch version by npm. In this case, typescript dependency is automatically overwritten to “2.2.2” as shown below.
+
+<Image src="/images/package2.png" />
+
+That's all. We tried to find answer the following questions..
+
+> What is semantic versioning (semver)?
+
+> Why package-lock.json file exist ?
+
+> What is the goal of npm-shrinkwrap.json file ?
+
+> What is the difference between package-lock.json and npm-shrinkwrap.json?
+
+Hope you learned a lot from this post.
+If you did, please don’t forget to give a clap and share with your friends. See you in the next post

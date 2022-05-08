@@ -1,0 +1,7 @@
+.title {
+  @apply inline-block ml-4 text-3xl text-red-800 text-center hover:drop-shadow-2xl;
+}
+
+.title:hover {
+  text-shadow: 1px 0;
+}
