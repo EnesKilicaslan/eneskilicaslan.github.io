@@ -8,10 +8,8 @@ export const Image = ({ src }: { src: string }) => {
       <Img
         loader={imageLoader}
         src={src}
-        width="100%"
-        height="100%"
         unoptimized={true}
-        objectFit="contain"
+        objectFit="fill"
         layout="fill"
       />
     </div>
