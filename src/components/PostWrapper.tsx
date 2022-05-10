@@ -34,15 +34,24 @@ export const PostWrapper = (props: {
             <div className="flex items-center gap-10 text-gray-500 bold ">
               {props.date}
 
-              <div className="flex gap-2 sm:visible invisible">
-                <a href="" className="opacity-70">
+              <div className="flex gap-2 sm:visible invisible hover:shadow-sm">
+                <a
+                  href="https://github.com/EnesKilicaslan"
+                  className="opacity-70 hover:opacity-100"
+                >
                   <Github className="h-5 w-5" />
                 </a>
 
-                <a href="" className="opacity-70">
+                <a
+                  href="https://stackoverflow.com/users/4735781/eneski"
+                  className="opacity-70 hover:opacity-100"
+                >
                   <Stackoverflow className="h-5 w-5" />
                 </a>
-                <a href="" className="opacity-70">
+                <a
+                  href="https://medium.com/@eneski"
+                  className="opacity-60 hover:opacity-100"
+                >
                   <Medium className="h-5 w-5" />
                 </a>
               </div>
