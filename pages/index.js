@@ -19,14 +19,26 @@ function HomePage() {
 
       {/* contact icons - github, medium, stackoverflow */}
       <div className=" flex gap-6 justify-center items-center mt-4 md:mt-8 mb-12 sm:mb-24 md:mb-32 ">
-        <a href="" className="hover:opacity-70">
+        <a
+          href="https://github.com/EnesKilicaslan"
+          className="hover:opacity-70"
+          target="_blank"
+        >
           <Github />
         </a>
 
-        <a href="" className="hover:opacity-70">
+        <a
+          href="https://stackoverflow.com/users/4735781/eneski"
+          className="hover:opacity-70"
+          target="_blank"
+        >
           <Stackoverflow />
         </a>
-        <a href="" className="hover:opacity-70">
+        <a
+          href="https://medium.com/@eneski"
+          className="hover:opacity-70"
+          target="_blank"
+        >
           <Medium />
         </a>
       </div>
