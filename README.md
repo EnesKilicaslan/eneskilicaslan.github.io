@@ -1,6 +1,1 @@
-# profile
-
-## Tasks
-
-- prepare portfolio items
-- show them with
+This is my personal websites's repo
