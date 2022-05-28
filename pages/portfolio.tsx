@@ -6,7 +6,7 @@ export const Portfolio = () => {
     <Container>
       <>
         <Heading active="/portfolio" />
-        <div> asdsda </div>
+        <div> in construction </div>
       </>
     </Container>
   );
